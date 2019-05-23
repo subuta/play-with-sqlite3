@@ -21,6 +21,7 @@ module.exports = (() => {
   }
 
   if (process.env.NODE_ENV === 'test') {
+    // SEE: https://github.com/tgriesser/knex/issues/1871
     config.connection = ':memory:'
   }
 

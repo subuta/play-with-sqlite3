@@ -14,8 +14,14 @@ npm run migrate
 # Seed database
 npm run seed
 
-# Run tests
+# Dump dev-database
+npm run dump
+
+# Run concurrent tests
 npm test
+
+# Run serial tests(slower)
+npm test-serial
 ```
 
 #### DB related commands

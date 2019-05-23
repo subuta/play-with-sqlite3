@@ -1,7 +1,7 @@
 const _ = require('lodash')
 const path = require('path')
 
-process.env.NODE_ENV = 'test-sqlite'
+process.env.NODE_ENV = 'test'
 
 module.exports = (wallaby) => {
   return {
@@ -9,6 +9,8 @@ module.exports = (wallaby) => {
       'lib/**/*.js',
       'db/**/*.js',
       'knexfile.js',
+      { pattern: 'db/dev.sqlite', binary: true },
+      { pattern: 'db/dump.sql', binary: true },
       '!lib/**/*.spec.js'
     ],
 
@@ -22,10 +24,7 @@ module.exports = (wallaby) => {
     },
 
     compilers: {
-      '**/*.js': wallaby.compilers.babel({
-        // Tell Wallaby to use Ava's Babel preset, necessary if your project doesn't use Babel otherwise.
-        presets: ['@ava/babel-preset-stage-4']
-      })
+      '**/*.js': wallaby.compilers.babel()
     },
     testFramework: 'ava'
   }

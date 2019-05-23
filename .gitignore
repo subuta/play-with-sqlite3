@@ -62,3 +62,4 @@ typings/
 
 ### Project files
 db/dev.sqlite
+db/dump.sql

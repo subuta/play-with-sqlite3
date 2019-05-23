@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
+    "test-serial": "ava -s",
+    "dump": "echo '.dump' | sqlite3 ./db/dev.sqlite > ./db/dump.sql",
     "watch": "ava --watch",
     "migrate": "knex-migrate up",
     "seed": "knex seed:run",
@@ -24,6 +26,8 @@
   "homepage": "https://github.com/subuta/play-with-sqlite3#readme",
   "dependencies": {
     "ava": "^1.4.1",
+    "bluebird": "^3.5.4",
+    "common-tags": "^1.8.0",
     "knex": "^0.16.5",
     "lodash": "^4.17.11",
     "sqlite3": "^4.0.8"
@@ -46,13 +50,6 @@
     "failFast": true,
     "require": [
       "esm"
-    ],
-    "babel": {
-      "testOptions": {
-        "presets": [
-          ["module:ava/stage-4", {"modules": false}]
-        ]
-      }
-    }
+    ]
   }
 }

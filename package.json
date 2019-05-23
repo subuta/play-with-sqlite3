@@ -4,6 +4,8 @@
   "description": "Play with sqlite3 and knex.",
   "main": "index.js",
   "scripts": {
+    "test": "ava",
+    "watch": "ava --watch",
     "migrate": "knex-migrate up",
     "seed": "knex seed:run",
     "migrate:down": "knex-migrate down",
@@ -28,7 +30,29 @@
   },
   "devDependencies": {
     "bcrypt": "^3.0.6",
+    "esm": "^3.2.25",
     "knex-migrate": "^1.7.2",
     "short-uuid": "^3.1.1"
+  },
+  "ava": {
+    "files": [
+      "lib/**/*.spec.js"
+    ],
+    "sources": [
+      "lib/**/*.js",
+      "!lib/**/*.spec.js"
+    ],
+    "concurrency": 5,
+    "failFast": true,
+    "require": [
+      "esm"
+    ],
+    "babel": {
+      "testOptions": {
+        "presets": [
+          ["module:ava/stage-4", {"modules": false}]
+        ]
+      }
+    }
   }
 }

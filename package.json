@@ -1,0 +1,34 @@
+{
+  "name": "play-with-sqlite3",
+  "version": "1.0.0",
+  "description": "Play with sqlite3 and knex.",
+  "main": "index.js",
+  "scripts": {
+    "migrate": "knex-migrate up",
+    "seed": "knex seed:run",
+    "migrate:down": "knex-migrate down",
+    "migrate:drop": "knex-migrate down --to 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subuta/play-with-sqlite3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subuta/play-with-sqlite3/issues"
+  },
+  "homepage": "https://github.com/subuta/play-with-sqlite3#readme",
+  "dependencies": {
+    "ava": "^1.4.1",
+    "knex": "^0.16.5",
+    "lodash": "^4.17.11",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "bcrypt": "^3.0.6",
+    "knex-migrate": "^1.7.2",
+    "short-uuid": "^3.1.1"
+  }
+}

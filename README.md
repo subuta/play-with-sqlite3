@@ -1,6 +1,7 @@
 # play-with-sqlite3
 Play with sqlite3 and knex.
 
+SEE: [play-with-pg](https://github.com/subuta/play-with-pg) also :)
 
 #### How to setup
 

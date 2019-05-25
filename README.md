@@ -14,9 +14,6 @@ npm run migrate
 # Seed database
 npm run seed
 
-# Dump dev-database
-npm run dump
-
 # Run concurrent tests
 npm test
 
